@@ -8,9 +8,10 @@ using namespace std;
     Conditions:
     1. The array must be sorted
 
-    Time Complexity: O(log n); Where n is the number of elements in the sorted array. This means that the time taken to search for an element in the array grows logarithmically as the size of the array increases.
+    Time Complexity: 
+        Best Case: O(1); If the element is found in the middle through the first iteration.
 
-    Space Complexity: O(1); Which indicates that the amount of memory required by the algorithm remains constant regardless of the size of the input array.
+        Average & Worst Case: O(log2 n); Where n is the number of elements in the sorted array. This means that the time taken to search for an element in the array grows logarithmically as the size of the array increases. Binary search works by repeatedly dividing the search interval in half. In each step, it discards half of the elements, which leads to a logarithmic time complexity. 2 because array is split into 2.
 */
 
 int Binary_Search(int *arr, int n, int target)
