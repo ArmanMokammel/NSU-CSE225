@@ -5,8 +5,7 @@ using namespace std;
 /*
     --BUBBLE SORT--
 
-    Time Complexity: 
-        Best Case: O(n*n = n^2); It requires 2 loops
+    Time Complexity: O(n*n = n^2); It requires 2 loops
 */
 
 // perform bubble sort
