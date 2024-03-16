@@ -2,6 +2,12 @@
 
 using namespace std;
 
+/*
+    --INSERTION SORT--
+
+    Time Complexity: O(n*n = n^2); It requires 2 loops
+*/
+
 void insertionSort(int arr[], int size)
 {
     //Starting from index = 1
