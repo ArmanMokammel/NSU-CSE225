@@ -1,5 +1,14 @@
 #include <iostream>
+
 using namespace std;
+
+/*
+    --QUICK SORT--
+
+    Time Complexity: 
+    Worst Case = O(n*n = n^2); The worst-case Scenario for Quicksort occur when the pivot at each step consistently results in highly unbalanced partitions.
+    Best/Average Case = O(nlog2 n); The best-case scenario for quicksort occur when the pivot chosen at the each step divides the array into roughly equal halves.
+*/
  
 int partition(int arr[],int low,int high)
 {
