@@ -19,6 +19,19 @@ void pushFront(int key){ //complexity = O(1) constant time complexity
 	head = newNode;
 }
 
+int topFront()
+{
+	if(head == NULL)
+	{
+		cout << "List is empty. Invalid operation." << endl;
+		return -1;
+	}
+	else
+	{
+		return head->key;
+	}
+}
+
 void pushBack(int key){ // Complexity = O(n)
 	Node* newNode = new Node(key);
 	Node* cur = head;
@@ -26,6 +39,46 @@ void pushBack(int key){ // Complexity = O(n)
 		cur = cur->next;
 	// cur holds the addr of the last node
 	cur -> next = newNode;
+}
+
+int topBack()
+{
+	if(head == NULL)
+	{
+		cout << "List is empty. Invalid operation." << endl;
+		return -1;
+	}
+	else
+	{
+		Node* cur = head;
+		while(cur->next != NULL)
+			cur = cur->next;
+
+		return cur->key;
+	}
+}
+
+void popBack()
+{
+	if(head == NULL)
+	{
+		cout << "List is empty. Invalid operation." << endl;
+		return;
+	}
+	else
+	{
+		Node* cur = head;
+		Node* temp;
+		while(cur->next != NULL)
+		{
+			temp = cur;
+			cur = cur->next;
+		}
+
+		temp->next = NULL;
+
+		delete cur;
+	}
 }
 
 void popFront(){
@@ -41,11 +94,11 @@ void popFront(){
 
 Node* find(int key)
 {
-    if(key == NULL)
+    if(key == '\0')
         return NULL;
 
     Node* cur = head;
-    while(cur->next != NULL)
+    while(cur != NULL)
     {
         if(cur->key == key)
         {
@@ -67,6 +120,92 @@ Node* addAfter(Node* node, int key)
         node->next = newNode;
     }
     return nd;
+}
+
+Node* addBefore(Node* node, int key)
+{
+	Node* cur = head;
+	Node* temp = head;
+	Node* newNode;
+	bool found = false;
+	
+    while(cur != NULL)
+    {
+        if(cur == node)
+        {
+			found = true;
+            break;
+        }
+		temp = cur;
+        cur = cur->next;
+    }
+
+	if(found && key != '\0')
+	{
+		newNode = new Node(key);
+		newNode->next = cur;
+		if(cur == head)
+		{
+			head = newNode;
+		}
+		else
+		{
+			temp->next = newNode;
+		}
+	}
+
+    return newNode;
+}
+
+void erase(int key)
+{
+	if(key == '\0')
+        return;
+
+    Node* cur = head;
+	Node* temp;
+	bool found = false;
+	
+    while(cur != NULL)
+    {
+        if(cur->key == key)
+        {
+			found = true;
+            break;
+        }
+		temp = cur;
+        cur = cur->next;
+    }
+
+	if(found)
+	{
+		if(cur == head)
+		{
+			head = cur->next;
+			delete cur;
+		}
+		else
+		{
+			temp->next = cur->next;
+			delete cur;
+		}
+	}
+	else
+	{
+		cout << "Node is empty. Invalid operation" << endl;
+	}
+}
+
+bool empty()
+{
+	if(head == NULL)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
 }
 
 void printNode(){ //complexity = O(n) linear time complexity
@@ -111,6 +250,29 @@ int main() {
     addAfter(node, 1);
 
     printNode();
+
+	cout << topFront() << endl;
+	cout << topBack() << endl;
+	popBack();
+
+	printNode();
+
+	erase(95);
+
+	printNode();
+
+	if(empty() == true)
+	{
+		cout << "True" << endl;
+	}
+	else
+	{
+		cout << "False" << endl;
+	}
+
+	addBefore(node, 69);
+
+	printNode();
 
 	return 0;
 }
