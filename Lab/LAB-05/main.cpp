@@ -81,6 +81,8 @@ int main()
         cout << "The list is not full" << endl;
     }
 
+    cout << "\n";
+    
 
     SortedType<TimeStamp> timeStamps;
 
@@ -94,7 +96,7 @@ int main()
     for(int i = 0; i < timeStamps.LengthIs(); i++)
     {
         timeStamps.GetNextItem(input2);
-        cout << input;
+        cout << input2;
     }
 
     cout << "\n";
@@ -105,7 +107,7 @@ int main()
     for(int i = 0; i < timeStamps.LengthIs(); i++)
     {
         timeStamps.GetNextItem(input2);
-        cout << input;
+        cout << input2;
     }
     
     return 0;
