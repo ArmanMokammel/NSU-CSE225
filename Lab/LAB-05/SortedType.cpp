@@ -106,9 +106,12 @@ void SortedType<ItemType>::DeleteItem(ItemType item)
         index++;
     }
     
+    delete &arr[index];
+    
     for (int i = index + 1; i < length; i++)
     {
         arr[i-1] = arr[i];
     }
     length--;
+
 }

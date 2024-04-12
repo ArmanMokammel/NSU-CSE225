@@ -1,4 +1,5 @@
 #include "SortedType.cpp"
+#include "TimeStamp.cpp"
 #include <iostream>
 
 using namespace std;
@@ -78,6 +79,33 @@ int main()
     else
     {
         cout << "The list is not full" << endl;
+    }
+
+
+    SortedType<TimeStamp> timeStamps;
+
+    timeStamps.InsertItem(TimeStamp(15, 34, 23));
+    timeStamps.InsertItem(TimeStamp(13, 13, 02));
+    timeStamps.InsertItem(TimeStamp(43, 45, 12));
+    timeStamps.InsertItem(TimeStamp(25, 36, 17));
+    timeStamps.InsertItem(TimeStamp(52, 02, 20));
+
+    TimeStamp input2;
+    for(int i = 0; i < timeStamps.LengthIs(); i++)
+    {
+        timeStamps.GetNextItem(input2);
+        cout << input;
+    }
+
+    cout << "\n";
+
+    timeStamps.DeleteItem(TimeStamp(25, 36, 17));
+
+    timeStamps.ResetList();
+    for(int i = 0; i < timeStamps.LengthIs(); i++)
+    {
+        timeStamps.GetNextItem(input2);
+        cout << input;
     }
     
     return 0;
