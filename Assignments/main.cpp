@@ -59,7 +59,8 @@ void merge(int arr[], int p, int q, int r) {
     int n1 = q - p + 1;
     int n2 = r - q;
 
-    int L[n1], M[n2];
+    int* L = new int[n1];
+    int* M = new int[n2];
 
     for (int i = 0; i < n1; i++)
         L[i] = arr[p + i];
@@ -93,6 +94,9 @@ void merge(int arr[], int p, int q, int r) {
         j++;
         k++;
     }
+
+    delete [] L;
+    delete [] M;
 }
 
 void mergeSort(int* arr, int p, int r){
@@ -360,6 +364,66 @@ int main()
 
     /* 
        ---- Insertion Sort Algorithm Region End ----
+    */
+
+   /* 
+       ---- Merge Sort Algorithm Region Start ----
+    */
+
+    cout << "\e[1m\e[32m[Merge Sort Algorithm Setup - START]\n" << endl;
+
+    cout << "\e[0mCopy Dataset 1 to new temporary array\n" << endl;
+    int temp_13[size_1];
+    
+    copy(dataset_1, dataset_1+size_1, temp_13);
+
+    cout << "Executing Merge Sort on Dataset 1 copy" << endl;
+    req_time = clock();
+    mergeSort(temp_13, 0, size_1-1);
+    req_time = clock() - req_time;
+    cout << "Time taken for Merge Sort on Dataset 1: \e[94m" << (float)req_time/CLOCKS_PER_SEC << "s\n" << endl;
+    delete [] &temp_13;
+
+    cout << "\e[0mCopy Dataset 2 to new temporary array\n" << endl;
+    int temp_14[size_2];
+
+    copy(dataset_2, dataset_2+size_2, temp_14);
+
+    cout << "Executing Merge Sort on Dataset 2 copy" << endl;
+    req_time = clock();
+    mergeSort(temp_14, 0, size_2-1);
+    req_time = clock() - req_time;
+    cout << "Time taken for Merge Sort on Dataset 2: \e[94m" << (float)req_time/CLOCKS_PER_SEC << "s\n" << endl;
+    delete [] &temp_14;
+
+    cout << "\e[0mCopy Dataset 3 to new temporary array\n" << endl;
+    int temp_15[size_3];
+
+    copy(dataset_3, dataset_3+size_3, temp_15);
+
+    cout << "Executing Merge Sort on Dataset 3 copy" << endl;
+    req_time = clock();
+    mergeSort(temp_15, 0, size_3-1);
+    req_time = clock() - req_time;
+    cout << "Time taken for Merge Sort on Dataset 3: \e[94m" << (float)req_time/CLOCKS_PER_SEC << "s\n" << endl;
+    delete [] &temp_15;
+
+    cout << "\e[0mCopy Dataset 4 to new temporary array\n" << endl;
+    int temp_16[size_4];
+
+    copy(dataset_4, dataset_4+size_4, temp_16);
+
+    cout << "Executing Merge Sort on Dataset 4 copy" << endl;
+    req_time = clock();
+    mergeSort(temp_16, 0, size_4-1);
+    req_time = clock() - req_time;
+    cout << "Time taken for Merge Sort on Dataset 4: \e[94m" << (float)req_time/CLOCKS_PER_SEC << "s\n" << endl;
+    delete [] &temp_16;
+
+    cout << "\e[1m\e[32m[Merge Sort Algorithm Setup - END]\n" << endl;
+
+    /* 
+       ---- Merge Sort Algorithm Region End ----
     */
 
     return 0;
