@@ -86,11 +86,17 @@ int main()
 
     SortedType<TimeStamp> timeStamps;
 
-    timeStamps.InsertItem(TimeStamp(15, 34, 23));
-    timeStamps.InsertItem(TimeStamp(13, 13, 02));
-    timeStamps.InsertItem(TimeStamp(43, 45, 12));
-    timeStamps.InsertItem(TimeStamp(25, 36, 17));
-    timeStamps.InsertItem(TimeStamp(52, 02, 20));
+    TimeStamp t1(15, 34, 23);
+    TimeStamp t2(13, 13, 02);
+    TimeStamp t3(43, 45, 12);
+    TimeStamp t4(25, 36, 17);
+    TimeStamp t5(52, 02, 20);
+
+    timeStamps.InsertItem(t1);
+    timeStamps.InsertItem(t2);
+    timeStamps.InsertItem(t3);
+    timeStamps.InsertItem(t4);
+    timeStamps.InsertItem(t5);
 
     TimeStamp input2;
     for(int i = 0; i < timeStamps.LengthIs(); i++)
@@ -101,7 +107,7 @@ int main()
 
     cout << "\n";
 
-    timeStamps.DeleteItem(TimeStamp(25, 36, 17));
+    timeStamps.DeleteItem(t4);
 
     timeStamps.ResetList();
     for(int i = 0; i < timeStamps.LengthIs(); i++)
