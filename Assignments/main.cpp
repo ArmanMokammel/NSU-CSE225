@@ -197,10 +197,10 @@ int main()
     req_time = clock();
     bubbleSort(temp_1, size_1);
     req_time = clock() - req_time;
-    cout << "Time taken for Bubble Sort on Dataset 1: " << (float)req_time/CLOCKS_PER_SEC << "s\n" << endl;
+    cout << "Time taken for Bubble Sort on Dataset 1: \e[94m" << (float)req_time/CLOCKS_PER_SEC << "s\n" << endl;
     delete [] &temp_1;
 
-    cout << "Copy Dataset 2 to new temporary array\n" << endl;
+    cout << "\e[0mCopy Dataset 2 to new temporary array\n" << endl;
     int temp_2[size_2];
 
     copy(dataset_2, dataset_2+size_2, temp_2);
@@ -209,10 +209,10 @@ int main()
     req_time = clock();
     bubbleSort(temp_2, size_2);
     req_time = clock() - req_time;
-    cout << "Time taken for Bubble Sort on Dataset 2: " << (float)req_time/CLOCKS_PER_SEC << "s\n" << endl;
+    cout << "Time taken for Bubble Sort on Dataset 2: \e[94m" << (float)req_time/CLOCKS_PER_SEC << "s\n" << endl;
     delete [] &temp_2;
 
-    cout << "Copy Dataset 3 to new temporary array\n" << endl;
+    cout << "\e[0mCopy Dataset 3 to new temporary array\n" << endl;
     int temp_3[size_3];
 
     copy(dataset_3, dataset_3+size_3, temp_3);
@@ -221,10 +221,10 @@ int main()
     req_time = clock();
     bubbleSort(temp_3, size_3);
     req_time = clock() - req_time;
-    cout << "Time taken for Bubble Sort on Dataset 3: " << (float)req_time/CLOCKS_PER_SEC << "s\n" << endl;
+    cout << "Time taken for Bubble Sort on Dataset 3: \e[94m" << (float)req_time/CLOCKS_PER_SEC << "s\n" << endl;
     delete [] &temp_3;
 
-    cout << "Copy Dataset 4 to new temporary array\n" << endl;
+    cout << "\e[0mCopy Dataset 4 to new temporary array\n" << endl;
     int temp_4[size_4];
 
     copy(dataset_4, dataset_4+size_4, temp_4);
@@ -233,7 +233,7 @@ int main()
     req_time = clock();
     bubbleSort(temp_4, size_4);
     req_time = clock() - req_time;
-    cout << "Time taken for Bubble Sort on Dataset 4: " << (float)req_time/CLOCKS_PER_SEC << "s\n" << endl;
+    cout << "Time taken for Bubble Sort on Dataset 4: \e[94m" << (float)req_time/CLOCKS_PER_SEC << "s\n" << endl;
     delete [] &temp_4;
 
     cout << "\e[1m\e[32m[Bubble Sort Algorithm Setup - END]\n" << endl;
@@ -257,10 +257,10 @@ int main()
     req_time = clock();
     selectionSort(temp_5, size_1);
     req_time = clock() - req_time;
-    cout << "Time taken for Selection Sort on Dataset 1: " << (float)req_time/CLOCKS_PER_SEC << "s\n" << endl;
+    cout << "Time taken for Selection Sort on Dataset 1: \e[94m" << (float)req_time/CLOCKS_PER_SEC << "s\n" << endl;
     delete [] &temp_5;
 
-    cout << "Copy Dataset 2 to new temporary array\n" << endl;
+    cout << "\e[0mCopy Dataset 2 to new temporary array\n" << endl;
     int temp_6[size_2];
 
     copy(dataset_2, dataset_2+size_2, temp_6);
@@ -269,10 +269,10 @@ int main()
     req_time = clock();
     selectionSort(temp_6, size_2);
     req_time = clock() - req_time;
-    cout << "Time taken for Selection Sort on Dataset 2: " << (float)req_time/CLOCKS_PER_SEC << "s\n" << endl;
+    cout << "Time taken for Selection Sort on Dataset 2: \e[94m" << (float)req_time/CLOCKS_PER_SEC << "s\n" << endl;
     delete [] &temp_6;
 
-    cout << "Copy Dataset 3 to new temporary array\n" << endl;
+    cout << "\e[0mCopy Dataset 3 to new temporary array\n" << endl;
     int temp_7[size_3];
 
     copy(dataset_3, dataset_3+size_3, temp_7);
@@ -281,10 +281,10 @@ int main()
     req_time = clock();
     selectionSort(temp_7, size_3);
     req_time = clock() - req_time;
-    cout << "Time taken for Selection Sort on Dataset 3: " << (float)req_time/CLOCKS_PER_SEC << "s\n" << endl;
+    cout << "Time taken for Selection Sort on Dataset 3: \e[94m" << (float)req_time/CLOCKS_PER_SEC << "s\n" << endl;
     delete [] &temp_7;
 
-    cout << "Copy Dataset 4 to new temporary array\n" << endl;
+    cout << "\e[0mCopy Dataset 4 to new temporary array\n" << endl;
     int temp_8[size_4];
 
     copy(dataset_4, dataset_4+size_4, temp_8);
@@ -293,13 +293,73 @@ int main()
     req_time = clock();
     selectionSort(temp_8, size_4);
     req_time = clock() - req_time;
-    cout << "Time taken for Selection Sort on Dataset 4: " << (float)req_time/CLOCKS_PER_SEC << "s\n" << endl;
+    cout << "Time taken for Selection Sort on Dataset 4: \e[94m" << (float)req_time/CLOCKS_PER_SEC << "s\n" << endl;
     delete [] &temp_8;
 
     cout << "\e[1m\e[32m[Selection Sort Algorithm Setup - END]\n" << endl;
 
     /* 
        ---- Selection Sort Algorithm Region End ----
+    */
+
+   /* 
+       ---- Insertion Sort Algorithm Region Start ----
+    */
+
+    cout << "\e[1m\e[32m[Insertion Sort Algorithm Setup - START]\n" << endl;
+
+    cout << "\e[0mCopy Dataset 1 to new temporary array\n" << endl;
+    int temp_9[size_1];
+    
+    copy(dataset_1, dataset_1+size_1, temp_9);
+
+    cout << "Executing Insertion Sort on Dataset 1 copy" << endl;
+    req_time = clock();
+    insertionSort(temp_9, size_1);
+    req_time = clock() - req_time;
+    cout << "Time taken for Insertion Sort on Dataset 1: \e[94m" << (float)req_time/CLOCKS_PER_SEC << "s\n" << endl;
+    delete [] &temp_9;
+
+    cout << "\e[0mCopy Dataset 2 to new temporary array\n" << endl;
+    int temp_10[size_2];
+
+    copy(dataset_2, dataset_2+size_2, temp_10);
+
+    cout << "Executing Insertion Sort on Dataset 2 copy" << endl;
+    req_time = clock();
+    insertionSort(temp_10, size_2);
+    req_time = clock() - req_time;
+    cout << "Time taken for Insertion Sort on Dataset 2: \e[94m" << (float)req_time/CLOCKS_PER_SEC << "s\n" << endl;
+    delete [] &temp_10;
+
+    cout << "\e[0mCopy Dataset 3 to new temporary array\n" << endl;
+    int temp_11[size_3];
+
+    copy(dataset_3, dataset_3+size_3, temp_11);
+
+    cout << "Executing Insertion Sort on Dataset 3 copy" << endl;
+    req_time = clock();
+    insertionSort(temp_11, size_3);
+    req_time = clock() - req_time;
+    cout << "Time taken for Insertion Sort on Dataset 3: \e[94m" << (float)req_time/CLOCKS_PER_SEC << "s\n" << endl;
+    delete [] &temp_11;
+
+    cout << "\e[0mCopy Dataset 4 to new temporary array\n" << endl;
+    int temp_12[size_4];
+
+    copy(dataset_4, dataset_4+size_4, temp_12);
+
+    cout << "Executing Insertion Sort on Dataset 4 copy" << endl;
+    req_time = clock();
+    insertionSort(temp_12, size_4);
+    req_time = clock() - req_time;
+    cout << "Time taken for Insertion Sort on Dataset 4: \e[94m" << (float)req_time/CLOCKS_PER_SEC << "s\n" << endl;
+    delete [] &temp_12;
+
+    cout << "\e[1m\e[32m[Insertion Sort Algorithm Setup - END]\n" << endl;
+
+    /* 
+       ---- Insertion Sort Algorithm Region End ----
     */
 
     return 0;
