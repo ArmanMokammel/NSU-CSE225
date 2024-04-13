@@ -65,6 +65,7 @@ void mergeSort(int* arr, int p, int r){
 	mergeSort(arr, q+1, r); //right subarray
 	merge(arr, p, q, r);
 }
+
 int main() {
 	// your code goes here
 	
