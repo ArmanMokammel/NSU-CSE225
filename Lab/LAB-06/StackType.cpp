@@ -51,3 +51,9 @@ ItemType StackType<ItemType>::Top()
 
     return items[top];
 }
+
+template<class ItemType>
+int StackType<ItemType>::size()
+{
+    return top+1;
+}

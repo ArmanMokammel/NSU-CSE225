@@ -23,6 +23,7 @@ class StackType
         void Push(ItemType);
         void Pop();
         ItemType Top();
+        int size();
 
     private:
         int top;
