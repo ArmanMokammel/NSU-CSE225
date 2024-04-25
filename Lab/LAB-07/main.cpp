@@ -7,7 +7,7 @@ template<class ItemType>
 void printQueue(QueueType<ItemType>* queue, int size)
 {
     int temp;
-    QueueType<int> tempQ(5);
+    QueueType<int> tempQ(size);
 
     while(!queue->IsEmpty())
     {
