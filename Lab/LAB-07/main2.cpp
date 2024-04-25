@@ -12,7 +12,6 @@ int main()
     input = 10;
 
     queue.Enqueue("1");
-    int r;
     string temp;
 
     for(int i = input; i > 0; i--)
