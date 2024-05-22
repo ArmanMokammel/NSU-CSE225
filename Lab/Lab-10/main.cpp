@@ -1,5 +1,6 @@
 #include <iostream>
 #include "StackType.cpp"
+#include <string>
 
 using namespace std;
 
@@ -22,11 +23,25 @@ int main()
 {
     StackType<char> stack;
 
-    string expression;
+    string inputExpression;
+    string expression = "";
     string result;
 
     cout << "Enter expression: ";
-    cin >> expression;
+    getline(cin, inputExpression);
+    
+    int x = 0;
+    while(inputExpression[x] != '\0')
+    {
+        if(inputExpression[x] == ' ')
+        {
+            x++;
+            continue;
+        }
+
+        expression += inputExpression[x];
+        x++;
+    }
 
     for(int i = 0; i < expression.length(); i++)
     {
@@ -56,6 +71,7 @@ int main()
                 stack.Pop();
             }
             stack.Push(c);
+            result += ' ';
         }
     }
 
