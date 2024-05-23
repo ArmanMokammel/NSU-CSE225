@@ -128,6 +128,8 @@ void postFixTOEval(string inputExpression)
     
     StackType<double> evalStack;
     double temp = 0;
+
+    //For each character in the post fix expression string
     for(int i = 0; i < expression.length(); i++)
     {
         char c = expression[i];
