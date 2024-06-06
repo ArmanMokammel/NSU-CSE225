@@ -208,11 +208,9 @@ int GraphType<VertexType>::OutDegree(VertexType v)
     int count = 0;
     for(int i = 0; i < numVertices; i++)
     {
-        cout << edges[vertexIndex][i] << " ";
         if(edges[vertexIndex][i] != NULL_EDGE)
             count++;
     }
-    cout << endl;
 
     return count;
 }
@@ -236,8 +234,20 @@ bool GraphType<VertexType>::FoundEdge(VertexType u, VertexType v)
 template <class VertexType>
 void GraphType<VertexType>::Print()
 {
+    cout << "  | ";
     for(int i = 0; i < numVertices; i++)
     {
+        cout << vertices[i] << " ";
+    }
+    cout << "\n  | ";
+    for(int i = 0; i < numVertices; i++)
+    {
+        cout << "--";
+    }
+    cout << endl;
+    for(int i = 0; i < numVertices; i++)
+    {
+        cout << vertices[i] << " | ";
         for(int j = 0; j < numVertices; j++)
         {
             cout << edges[i][j] << " ";
