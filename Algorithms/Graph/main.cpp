@@ -52,7 +52,7 @@ int main()
     graph.DepthFirstSearch('B', 'E');
     graph.DepthFirstSearch('E', 'B');
 
-    graph.BreadthFirstSearch('B', 'E');
+    cout << "E = " << graph.BreadthFirstSearch('B', 'E') << endl;
     graph.BreadthFirstSearch('E', 'B');
 
     return 0;

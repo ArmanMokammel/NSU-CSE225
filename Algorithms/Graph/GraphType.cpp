@@ -2,6 +2,7 @@
 #include "StackType.cpp"
 #include "QueueType.cpp"
 #include <iostream>
+#include <map>
 
 using namespace std;
 const int NULL_EDGE = 0;
@@ -161,20 +162,25 @@ void GraphType<VertexType>::DepthFirstSearch(VertexType startVertex,
 
 template <class VertexType>
 int GraphType<VertexType>::BreadthFirstSearch(VertexType startVertex,
-                                               VertexType endVertex)
+                                              VertexType endVertex)
 {
     QueueType<VertexType> queue;
     QueueType<VertexType> vertexQ;
+    map<VertexType, int> distance; // map to store distance from startVertex
     bool found = false;
     VertexType vertex, item;
     int length = 0;
+
     ClearMarks();
     queue.Enqueue(startVertex);
+    distance[startVertex] = 0; // distance from startVertex to itself is 0
+
     do
     {
         queue.Dequeue(vertex);
         if (vertex == endVertex)
         {
+            length = distance[vertex];
             cout << vertex << " ";
             found = true;
         }
@@ -189,17 +195,21 @@ int GraphType<VertexType>::BreadthFirstSearch(VertexType startVertex,
                 {
                     vertexQ.Dequeue(item);
                     if (!IsMarked(item))
+                    {
                         queue.Enqueue(item);
+                        // set the distance for the neighboring vertex
+                        distance[item] = distance[vertex] + 1;
+                    }
                 }
             }
         }
     } while (!queue.IsEmpty() && !found);
-    cout << endl;
-    if (!found)
-        cout << "Path not found." << endl;
     
+    cout << endl;
+
     return length;
 }
+
 
 template <class VertexType>
 int GraphType<VertexType>::OutDegree(VertexType v)
